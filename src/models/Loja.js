@@ -4,7 +4,7 @@ const LojaSchema = new  mongoose.Schema({
     
     box: String,
     port: String,
-    produtos : [String],
+    produto : [String],
     user : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
