@@ -9,13 +9,17 @@ module.exports = {
             telefone,
         
         } = req .body;
-         const    user = await User.create({ 
+        let user = await User.findOne({email, nome, telefone});
+
+        if (!user){
+        
+         user = await User.create({ 
                 
                 email,
                 nome,
                 telefone
             })
-        
+    }
         
         return res.json(user);
     }
